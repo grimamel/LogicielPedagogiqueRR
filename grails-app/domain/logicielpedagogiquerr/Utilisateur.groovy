@@ -5,6 +5,12 @@ class Utilisateur {
 	String prenom
 	String email
 	String mot_de_passe
+	/*
+	 * 
+	 *un utilisateur interagit(peut répondre) avec plusieurs questions
+	 */
+	
+	static hasMany = [questions:Question]
 
     static constraints = {
 		nom nullable: false, blank: false

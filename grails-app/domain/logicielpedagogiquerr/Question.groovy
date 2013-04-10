@@ -1,4 +1,5 @@
 package logicielpedagogiquerr
+
 enum Type_De_Question{
 	choixmultiple, choixsimple
 	}
@@ -9,7 +10,10 @@ class Question {
 	int temps_actif //le temps que la question reste ouverte avant la fermeture par l'enseignant
 	int nbreVotes// le nombre de vote éffectués par les étudiants
 	Type_De_Question type // nous donne la possibilité d'avoir des choix simple ou des choix multiple pour les réponses
-	
+	/*
+	 * une question peut avoir plusieurs réponses
+	 */
+	static hasMany = [reponses:Reponse]
 	
     static constraints = {
 		texte nullable: false, blank: false
